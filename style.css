@@ -1,0 +1,16 @@
+body {
+	background-image: url(index.gif)
+}
+
+#sitename {
+	color: white;
+	font-size: 30pt;
+	text-align: center;
+	background-color: #64c6e4;
+	border-radius: 30px 10px;
+}
+
+#information {
+	text-align: center;
+	color: white;
+}
