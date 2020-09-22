@@ -14,3 +14,26 @@ body {
 	text-align: center;
 	color: white;
 }
+
+#sites {
+	 margin: 0;
+     padding: 0;
+	 list-style-type: none;
+	 border: 2px solid white;
+	 border-radius: 20px 5px;
+	 
+	 text-align: left;
+	 background-color: #191919;
+	 width: 800px;
+}
+
+#sites a {
+	color: white;
+	text-decoration: none;
+	border: 2px solid white;
+	font-size: 30pt;
+	
+}
+#sites li {
+	margin: 10px;
+}
