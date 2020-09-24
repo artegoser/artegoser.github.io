@@ -22,7 +22,7 @@ body {
 	 border: 2px solid white;
 	 border-radius: 20px 5px;
 	 
-	 text-align: left;
+	 text-align: center;
 	 background-color: #191919;
 	 width: 800px;
 }
@@ -36,4 +36,12 @@ body {
 }
 #sites li {
 	margin: 10px;
+}
+
+#sites a:hover {
+	color: white;
+	text-decoration: none;
+	border: 2px solid white;
+	background-color: #64c6e4;
+	font-size: 30pt;
 }
