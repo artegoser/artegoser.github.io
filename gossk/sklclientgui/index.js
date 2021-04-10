@@ -1,5 +1,5 @@
 window.onload = () => {
-const socket = io("wss://artegoser.tplinkdns.com:9191");
+const socket = io("https://artegoser.tplinkdns.com:9191");
 
 socket.emit("ping");
 socket.on("pong", ()=>{
