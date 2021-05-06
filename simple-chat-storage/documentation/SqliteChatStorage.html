@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li><li data-type='method'><a href="SqliteChatStorage.html#sqlite_all">sqlite_all</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -111,7 +111,7 @@
 
 
 <div class="description usertext">
-    Chat storage. Storage method (JSON)
+    Chat storage. Storage method (sqlite)
 </div>
 
 
@@ -289,7 +289,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line238">line 238</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line250">line 250</a>
     </li></ul></dd>
     
 
@@ -341,7 +341,7 @@
 
         
             
-<h4 class="name" id="time"><span class="type-signature"></span>time<span class="type-signature"></span></h4>
+<h4 class="name" id="name"><span class="type-signature"></span>name<span class="type-signature"></span></h4>
 
 
 
@@ -352,7 +352,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line247">line 247</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line259">line 259</a>
     </li></ul></dd>
     
 
@@ -392,7 +392,70 @@
 
 
 <div class="description usertext">
-    Get current time
+    Get name of sqlite table
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="time"><span class="type-signature"></span>time<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line268">line 268</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Get current time in format YYYY-MM-DD HH:MM:SS
 </div>
 
 
@@ -620,7 +683,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line185">line 185</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line184">line 184</a>
     </li></ul></dd>
     
 
@@ -766,7 +829,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line198">line 198</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line210">line 210</a>
     </li></ul></dd>
     
 
@@ -912,7 +975,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line229">line 229</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line241">line 241</a>
     </li></ul></dd>
     
 
@@ -1009,7 +1072,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line222">line 222</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line234">line 234</a>
     </li></ul></dd>
     
 
@@ -1248,7 +1311,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line211">line 211</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line223">line 223</a>
     </li></ul></dd>
     
 
@@ -1417,7 +1480,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line163">line 163</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line162">line 162</a>
     </li></ul></dd>
     
 
@@ -1563,7 +1626,153 @@
 
         
 <div class="param-desc">
-    promise with sql response
+    promise(err|row)
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="sqlite_all"><span class="type-signature"></span>sqlite_all<span class="signature">(query)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line197">line 197</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Runs the SQL query with the specified parameters.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">SQLite query</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    promise(err|row)
 </div>
 
 
@@ -1592,7 +1801,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed May 05 2021 21:04:45 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Thu May 06 2021 21:51:32 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

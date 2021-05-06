@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li><li data-type='method'><a href="SqliteChatStorage.html#sqlite_all">sqlite_all</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -64,19 +64,61 @@
 <img src="https://img.shields.io/npm/dt/simple-chat-storage" alt="npm">
 <a href="https://coveralls.io/github/artegoser/simple-chat-storage?branch=main"><img src="https://coveralls.io/repos/github/artegoser/simple-chat-storage/badge.svg?branch=main" alt="Coverage Status"></a>
 <img src="https://img.shields.io/npm/l/simple-chat-storage" alt="NPM"></p>
-<h1>Full Documentation - <a href="https://artegoser.github.io/simple-chat-storage/documentation/index.html">Documentation</a></h1>
-<h2>API (There is both a JSON storage and a sqlite storage)</h2>
-<p>addmessage(user, message, time=this.time) - adds message to chat<br>
-erase() - erases the storage
-deletemessage(id) - deletes the message by id</p>
-<h2>API (sqlite)</h2>
-<p>constructor(name, dbpath=&quot;chat.db&quot;, length=false) - name(name of the chat table),  dbath(path to the database), length(false if infinite)</p>
-<p>prepare() - prepares the storage and return a promise<br>
-deletemessage(id) - deletes the message by id<br>
-replacemessage(id, message) - replaces the message by id<br>
-getBdId(index) - returns id of message from index (constructor.messages[index].id)
-select(what, where(optional)).then((row)=&gt;{}).catch((err)=&gt;{}) - SQL selector
-delete(where) - SQL deleter</p>
+<table>
+<thead>
+<tr>
+<th>📚<a href="https://artegoser.github.io/simple-chat-storage/documentation/index.html">Documentation</a></th>
+<th>📕<a href="https://github.com/artegoser/simple-chat-storage/issues">Bugs</a></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<h2>Installation</h2>
+<p><code>npm i simple-chat-storage</code><br>
+or<br>
+<code>yarn add simple-chat-storage</code></p>
+<h2>Most usefull features (There is both a JSON storage and a sqlite storage)</h2>
+<p><strong>addmessage(user, message, time(optional))</strong> - adds message to chat<br>
+<strong>erase()</strong> - erases the storage<br>
+<strong>deletemessage(index)</strong> - deletes the message by index(storage.messages[index])</p>
+<h2>Most usefull features (sqlite)</h2>
+<p>new SqliteChatStorage(name, dbpath, length)</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td></td>
+<td>name of table in sqlite database</td>
+</tr>
+<tr>
+<td>dbpath</td>
+<td>string</td>
+<td>chat.db</td>
+<td>path to sqlite database</td>
+</tr>
+<tr>
+<td>length</td>
+<td>integer/false</td>
+<td>false</td>
+<td>number of stored messages</td>
+</tr>
+</tbody>
+</table>
+<p><strong>prepare()</strong> - Preparing and initializing the table and returnings a promise<br>
+<strong>deletemessage(id)</strong> - deletes the message by id<br>
+<strong>replacemessage(id, message)</strong> - replaces the message by id<br>
+<strong>delete(where)</strong> - SQL deleter<br>
+<strong>select(what, where(optional))</strong>.then((row)=&gt;{}).catch((err)=&gt;{}) - SQL selector<br>
+<strong>getBdId(index)</strong> - returns id of message from index (storage.messages[index].id)</p>
 <h3>Example</h3>
 <pre class="prettyprint source lang-javascript"><code>const chat = require(&quot;simple-chat-storage&quot;).sqlite;
 const test = new chat(&quot;test&quot;, &quot;chat.db&quot;, 30);
@@ -90,9 +132,40 @@ test.prepare().then(()=>{
 	});
 });
 </code></pre>
-<h2>API (JSON)</h2>
-<p>constructor(name, length=false, dir=&quot;./chats&quot;) - name(name of the chat table), length(false if infinite)<br>
-deletelastmessage(user) - deletes last user message</p>
+<h2>Most usefull features (JSON)</h2>
+<p><code>Faster than sqlite, but does not have SQL functions</code></p>
+<p>new JsonChatStorage(name, length, dir)</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td></td>
+<td>name of JSON storage</td>
+</tr>
+<tr>
+<td>length</td>
+<td>integer/false</td>
+<td>false</td>
+<td>number of stored messages</td>
+</tr>
+<tr>
+<td>dir</td>
+<td>string</td>
+<td>./chats</td>
+<td>folder for storing all json storages</td>
+</tr>
+</tbody>
+</table>
+<p><strong>deletelastmessage(user)</strong> - Deletes a last message of user</p>
 <h3>Example</h3>
 <pre class="prettyprint source lang-javascript"><code>let chat = require(&quot;simple-chat-storage&quot;).JSON;
 let test = new chat(&quot;test&quot;);
@@ -114,19 +187,19 @@ console.log(test.messages);
 <tbody>
 <tr>
 <td>All files</td>
-<td>92.86</td>
-<td>81.25</td>
-<td>92.5</td>
-<td>93.67</td>
+<td>93.33</td>
+<td>82.35</td>
+<td>93.33</td>
+<td>94.05</td>
 <td></td>
 </tr>
 <tr>
 <td>index.js</td>
-<td>92.86</td>
-<td>81.25</td>
-<td>92.5</td>
-<td>93.67</td>
-<td>75-76,230-232</td>
+<td>93.33</td>
+<td>82.35</td>
+<td>93.33</td>
+<td>94.05</td>
+<td>75-76,242-244</td>
 </tr>
 </tbody>
 </table></article>
@@ -144,7 +217,7 @@ console.log(test.messages);
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed May 05 2021 21:04:45 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Thu May 06 2021 21:51:32 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

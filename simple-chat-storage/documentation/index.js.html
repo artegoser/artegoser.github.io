@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li><li data-type='method'><a href="SqliteChatStorage.html#sqlite_all">sqlite_all</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -120,10 +120,10 @@ class JsonChatStorage {
         this.backup();
     }
     /**
-     * current time
+     * Get current time in format YYYY-MM-DD HH:MM:SS
      */
-    get time(){
-        return strftime("%d.%m.%Y %H:%M:%S");
+     get time(){
+        return strftime("%Y-%m-%d %H:%M:%S");
     }
     /**
      * backups a JSON storage
@@ -136,7 +136,7 @@ class JsonChatStorage {
 
 class SqliteChatStorage {
     /**
-     * Chat storage. Storage method (JSON)
+     * Chat storage. Storage method (sqlite)
      * @constructor
      * @param {string} name name of table in sqlite database
      * @param {string} dbpath path to sqlite database
@@ -180,7 +180,6 @@ class SqliteChatStorage {
                     if(this.meslength){
                         if(row[0].count >= this.meslength){
                             this._db.run(`DELETE FROM ${this._name} WHERE ID = (SELECT MIN(ID) FROM ${this._name})`)
-                            this._messages.shift();
                         }
                     }
                     this._db.run(`INSERT INTO ${this._name} (user, message, time) VALUES ("${user}", "${message}", "${time}")`, ()=>{
@@ -192,7 +191,7 @@ class SqliteChatStorage {
     }
     _updatemessages(){
         return new Promise((res, rej)=>{
-            this._db.all(`SELECT * FROM ${this._name}`, (err, row)=>{
+            this._db.all(`SELECT * FROM ${this._name} ORDER BY time`, (err, row)=>{
                 this._messages = row;
                 res();
             });
@@ -202,7 +201,7 @@ class SqliteChatStorage {
      * Select a message(s) by sql-query
      * @param {string} what sql column
      * @param {string|none} where sql condition
-     * @returns promise with sql response
+     * @returns promise(err|row)
      */
     select(what, where){
         if (where){
@@ -231,6 +230,19 @@ class SqliteChatStorage {
             this._db.run(`DELETE FROM ${this._name} WHERE ${where}`, (err)=>{
                 if(err) rej(err);
                 this._updatemessages().then(res);
+            });
+        });
+    }
+    /**
+     * Runs the SQL query with the specified parameters.
+     * @param {string} query SQLite query
+     * @returns promise(err|row)
+     */
+    sqlite_all(query){
+        return new Promise((res, rej)=>{
+            this._db.all(query, (err, row)=>{
+                if(err) rej(err);
+                else res(row);
             });
         });
     }
@@ -286,10 +298,19 @@ class SqliteChatStorage {
         throw new Error("in sqlite chat storage you can't change the messages variable, you can only read it")
     }
     /**
-     * Get current time
+     * Get name of sqlite table
+     */
+     get name(){
+        return this._name
+    }
+    set name(v){
+        throw new Error("in sqlite chat storage you can't change the name variable, you can only read it")
+    }
+    /**
+     * Get current time in format YYYY-MM-DD HH:MM:SS
      */
     get time(){
-        return strftime("%d.%m.%Y %H:%M:%S");
+        return strftime("%Y-%m-%d %H:%M:%S");
     }
 }
 
@@ -310,7 +331,7 @@ module.exports = {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed May 05 2021 21:04:45 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Thu May 06 2021 21:51:32 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
