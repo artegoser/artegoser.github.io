@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li><li data-type='method'><a href="SqliteChatStorage.html#sqlite_all">sqlite_all</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#backup_meta">backup_meta</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li><li data-type='method'><a href="SqliteChatStorage.html#sqlite_all">sqlite_all</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -59,7 +59,7 @@
 
     
 
-    <h4 class="name" id="JsonChatStorage"><span class="type-signature"></span>new JsonChatStorage<span class="signature">(name, length, dir)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="JsonChatStorage"><span class="type-signature"></span>new JsonChatStorage<span class="signature">(name, length, dir, meta)</span><span class="type-signature"></span></h4>
 
     
 
@@ -71,7 +71,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line12">line 12</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -227,12 +227,42 @@
             
                 <td class="default">
                 
-                    <code>./chats</code>
+                    <code>chats</code>
                 
                 </td>
             
 
             <td class="description last">folder for storing all json storages</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>meta</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">none</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">metadata for JSON storage</td>
         </tr>
 
     
@@ -278,6 +308,69 @@
 
         
             
+<h4 class="name" id="add_meta"><span class="type-signature"></span>add_meta<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line104">line 104</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    adds metadata to meta
+</div>
+
+
+
+
+
+
+
+
+        
+            
 <h4 class="name" id="time"><span class="type-signature"></span>time<span class="type-signature"></span></h4>
 
 
@@ -289,7 +382,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line81">line 81</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line98">line 98</a>
     </li></ul></dd>
     
 
@@ -362,7 +455,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line35">line 35</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -557,7 +650,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line87">line 87</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line118">line 118</a>
     </li></ul></dd>
     
 
@@ -632,6 +725,93 @@
 
     
 
+    <h4 class="name" id="backup_meta"><span class="type-signature"></span>backup_meta<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line124">line 124</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    backups a metadata
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="deletelastmessage"><span class="type-signature"></span>deletelastmessage<span class="signature">(user)</span><span class="type-signature"></span></h4>
 
     
@@ -644,7 +824,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line56">line 56</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -780,7 +960,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line68">line 68</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -916,7 +1096,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line74">line 74</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -1006,7 +1186,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Thu May 06 2021 21:51:32 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Fri May 07 2021 11:31:38 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

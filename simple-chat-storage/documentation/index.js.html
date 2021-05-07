@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li><li data-type='method'><a href="SqliteChatStorage.html#sqlite_all">sqlite_all</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="JsonChatStorage.html">JsonChatStorage</a><ul class='methods'><li data-type='method'><a href="JsonChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#backup">backup</a></li><li data-type='method'><a href="JsonChatStorage.html#backup_meta">backup_meta</a></li><li data-type='method'><a href="JsonChatStorage.html#deletelastmessage">deletelastmessage</a></li><li data-type='method'><a href="JsonChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="JsonChatStorage.html#erase">erase</a></li></ul></li><li><a href="SqliteChatStorage.html">SqliteChatStorage</a><ul class='methods'><li data-type='method'><a href="SqliteChatStorage.html#addmessage">addmessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#delete">delete</a></li><li data-type='method'><a href="SqliteChatStorage.html#deletemessage">deletemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#erase">erase</a></li><li data-type='method'><a href="SqliteChatStorage.html#getBdId">getBdId</a></li><li data-type='method'><a href="SqliteChatStorage.html#prepare">prepare</a></li><li data-type='method'><a href="SqliteChatStorage.html#replacemessage">replacemessage</a></li><li data-type='method'><a href="SqliteChatStorage.html#select">select</a></li><li data-type='method'><a href="SqliteChatStorage.html#sqlite_all">sqlite_all</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -52,18 +52,35 @@ class JsonChatStorage {
      * @param {string} name name of JSON storage 
      * @param {integer|false} length number of stored messages
      * @param {string} dir folder for storing all json storages
+     * @param {Object|none} meta metadata for JSON storage
      */
-	constructor(name, length=false, dir="./chats"){
+	constructor(name, length=false, dir="chats", meta){
         this.meslength = length;
         this._name = name;
         this._dir = dir;
+        if (!fs.existsSync(this._dir)) fs.mkdirSync(this._dir);
+
         try{
             this.messages = this._req(`./${this._dir}/${this._name}.json`);
         } catch{
             this.messages = [];
+            this.backup();
         }
-		
-		if (!fs.existsSync(this._dir)) fs.mkdirSync(this._dir);
+
+        try{
+            this._meta = this._req(`./${this._dir}/${this._name}_meta.json`);
+            if(meta){
+                this._meta = Object.assign(this._meta, meta);
+                this.backup_meta();
+            }
+
+        } catch{
+            if(meta) {
+                this._meta = meta;
+                this.backup_meta();
+            }
+
+        }
     }
 
     _req(path){
@@ -122,14 +139,34 @@ class JsonChatStorage {
     /**
      * Get current time in format YYYY-MM-DD HH:MM:SS
      */
-     get time(){
+    get time(){
         return strftime("%Y-%m-%d %H:%M:%S");
+    }
+    /**
+     * adds metadata to meta
+     */
+    set add_meta(v){
+        this._meta = Object.assign(this._meta,v);
+        this.backup_meta();
+    }
+    set meta(v){
+        this._meta = v;
+        this.backup_meta();
+    }
+    get meta(){
+        return this._meta
     }
     /**
      * backups a JSON storage
      */
     backup(){
         fs.writeFileSync(`./${this._dir}/${this._name}.json`, JSON.stringify(this.messages, null, 4));
+    }
+    /**
+     * backups a metadata
+     */
+    backup_meta(){
+        fs.writeFileSync(`./${this._dir}/${this._name}_meta.json`, JSON.stringify(this._meta, null, 4));
     }
 
 }
@@ -331,7 +368,7 @@ module.exports = {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Thu May 06 2021 21:51:32 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Fri May 07 2021 11:31:38 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
