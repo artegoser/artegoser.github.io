@@ -4,6 +4,156 @@
     {
       "type": "Feature",
       "properties": {
+        "stroke": "#0f97eb",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#e10e0e",
+        "fill-opacity": 0.5,
+        "name": "s-s-r"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.2802734375,
+              66.95587684341999
+            ],
+            [
+              67.25830078125,
+              66.21373941545203
+            ],
+            [
+              67.6318359375,
+              63.54855223203644
+            ],
+            [
+              68.5986328125,
+              60.951776809566965
+            ],
+            [
+              73.212890625,
+              60.70544838111038
+            ],
+            [
+              75.56396484375,
+              61.17503266354878
+            ],
+            [
+              76.13525390624999,
+              62.52245786661599
+            ],
+            [
+              76.22314453125,
+              63.675505883656584
+            ],
+            [
+              76.0693359375,
+              64.80220413595875
+            ],
+            [
+              75.5859375,
+              65.73062649311031
+            ],
+            [
+              74.7509765625,
+              66.67038675925365
+            ],
+            [
+              73.95996093749999,
+              67.13582938531948
+            ],
+            [
+              72.24609375,
+              67.38214977864425
+            ],
+            [
+              69.58740234375,
+              67.39904441383015
+            ],
+            [
+              67.67578124999999,
+              67.25505812564363
+            ],
+            [
+              67.2802734375,
+              66.95587684341999
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f6fa00",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "city": "Светлоград",
+        "type": "capital-city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.5751953125,
+          63.74363097533544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0088ff",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Черябинск",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.61962890625,
+          65.48562608106525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#00aaff",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Симара",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.26806640624999,
+          61.57503479707305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#00aaff",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Керенск",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.5751953125,
+          62.226996036319726
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stroke": "#96a0ff",
         "stroke-width": 2,
         "stroke-opacity": 1,
