@@ -1728,21 +1728,6 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#00b3ff",
-        "marker-size": "medium",
-        "marker-symbol": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          72.1636962890625,
-          61.62467597106484
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "marker-color": "#00aaff",
         "marker-size": "medium",
         "marker-symbol": "",
