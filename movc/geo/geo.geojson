@@ -4,6 +4,23 @@
     {
       "type": "Feature",
       "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "embassy",
+        "name": "The Bridge of Friendship | 友情の架け橋",
+        "type": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9581470489502,
+          33.961995625726885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stroke": "#4411a2",
         "stroke-width": 2,
         "stroke-opacity": 1,
