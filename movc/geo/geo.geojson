@@ -4,6 +4,92 @@
     {
       "type": "Feature",
       "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#32a4c0",
+        "fill-opacity": 0.5,
+        "name": "Bogdanland"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.5693359375,
+              -0.5493079911125155
+            ],
+            [
+              9.29443359375,
+              -2.5040852618529215
+            ],
+            [
+              10.1513671875,
+              -3.162455530237848
+            ],
+            [
+              10.3271484375,
+              -0.37353251022880474
+            ],
+            [
+              8.5693359375,
+              -0.5493079911125155
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#3c9aa2",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "New Dan Town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.70268665254116,
+          -0.6308193462139551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#358ba4",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": " Bogdan City"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.017955847084522,
+          -1.3090314199823916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#2e98a7",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Fehsburg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.965108282864094,
+          -0.6586860683872612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stroke": "#ff0000",
         "stroke-width": 2,
         "stroke-opacity": 1,
