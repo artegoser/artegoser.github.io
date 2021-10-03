@@ -4,6 +4,411 @@
     {
       "type": "Feature",
       "properties": {
+        "stroke": "#ffb8b8",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#ffa200",
+        "fill-opacity": 0.5,
+        "name": "Cheijou"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              127.0513916015625,
+              37.76202988573211
+            ],
+            [
+              126.859130859375,
+              36.54494944148322
+            ],
+            [
+              128.0950927734375,
+              36.57142382346277
+            ],
+            [
+              128.14453125,
+              37.87485339352928
+            ],
+            [
+              127.0513916015625,
+              37.76202988573211
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "city",
+        "name": "Phinji"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.342529296875,
+          37.59900015064849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "city",
+        "name": "Samithi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.81768798828124,
+          37.5238862196042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "city",
+        "name": "Su"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.5018310546875,
+          37.355967684576406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "town",
+        "name": "Refdfst"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.03054809570312,
+          37.75551557687063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "town",
+        "name": "Syosyu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.69683837890626,
+          37.75877280300828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "city",
+        "name": "Fyonkusan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.28073120117188,
+          37.28716518793858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "town",
+        "name": "Terrastiya"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.15576171875,
+          37.41816326969145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "city",
+        "name": "산늘"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.69134521484374,
+          37.293720520228696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "town",
+        "name": "Tsungeba"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.67486572265625,
+          37.10776507118514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "city",
+        "name": "Sofia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.65838623046875,
+          36.97183825093165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "fire-station",
+        "name": "Buljangnanhoiya edil"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.90582275390625,
+          36.578041001498704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "police",
+        "name": "Polisa an Cheijou"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.15576171875,
+          36.86863488530103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "religious-christian",
+        "name": "lengый"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.10357666015624,
+          36.81368259124586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "airport",
+        "name": "Cheijougug Pasen Sougebnida"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.06787109374999,
+          37.10995544464346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.41668701171876,
+          37.14718209972376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "rail-metro",
+        "name": "Jowan "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60070800781249,
+          37.58811876638322
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "hospital",
+        "name": "dande"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.06488037109375,
+          36.595684037179055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "school",
+        "name": "sakura-hils"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.91107177734374,
+          37.36360851770406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "school",
+        "name": "Sakje"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.59796142578124,
+          37.51190453731693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "shop",
+        "name": "Gusha"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.43865966796875,
+          37.735969208590504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "alcohol-shop",
+        "name": "Kusyo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.93304443359375,
+          37.688167468408025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "mobilephone",
+        "name": "Foxtrod"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.79296875,
+          37.74465712069939
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "mobilephone",
+        "name": "Vyunfa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.96875,
+          37.607704112428394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stroke": "#fda0a0",
         "stroke-width": 2,
         "stroke-opacity": 1,
@@ -571,44 +976,6 @@
             [
               95.4052734375,
               81.2883755402153
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stroke": "#ffb8b8",
-        "stroke-width": 2,
-        "stroke-opacity": 1,
-        "fill": "#ffa200",
-        "fill-opacity": 0.5,
-        "name": "Cheijou"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              127.0513916015625,
-              37.76202988573211
-            ],
-            [
-              126.859130859375,
-              36.54494944148322
-            ],
-            [
-              128.0950927734375,
-              36.57142382346277
-            ],
-            [
-              128.14453125,
-              37.87485339352928
-            ],
-            [
-              127.0513916015625,
-              37.76202988573211
             ]
           ]
         ]
