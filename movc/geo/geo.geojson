@@ -4,6 +4,23 @@
     {
       "type": "Feature",
       "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "park",
+        "name": "Mt. Paektusan",
+        "type": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05603981018066,
+          42.00746858958598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stroke": "#555555",
         "stroke-width": 2,
         "stroke-opacity": 1,
