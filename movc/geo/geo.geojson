@@ -1736,7 +1736,8 @@
         "stroke-width": 2,
         "stroke-opacity": 1,
         "fill": "#f55353",
-        "fill-opacity": 0.5
+        "fill-opacity": 0.5,
+        "name": "Talonsk"
       },
       "geometry": {
         "type": "Polygon",
