@@ -4425,8 +4425,20 @@
               35.092945313732635
             ],
             [
-              -74.718017578125,
-              39.155622393423215
+              -75.8056640625,
+              36.81808022778526
+            ],
+            [
+              -77.98095703125,
+              38.16047628099622
+            ],
+            [
+              -77.6513671875,
+              39.39375459224348
+            ],
+            [
+              -75.82763671875,
+              40.1452892956766
             ],
             [
               -76.31103515625,
@@ -4651,23 +4663,6 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "name": "Washington",
-        "type": "city"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.025146484375,
-          38.87392853923629
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "marker-symbol": "",
         "name": "West Virginia",
         "type": "city"
       },
@@ -4676,23 +4671,6 @@
         "coordinates": [
           -80.595703125,
           38.61687046392973
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "name": "Dovergrad",
-        "type": "city"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.5859375,
-          38.831149809348744
         ]
       }
     },
