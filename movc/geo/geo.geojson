@@ -4,6 +4,144 @@
     {
       "type": "Feature",
       "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "circle-stroked",
+        "type": "city",
+        "name": "Бриллер"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.8115234375,
+          79.69111700765035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Пригород Бриллера"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.36083984375,
+          79.60821469998169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Эльфисон"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.10888671875,
+          80.4558664026958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#ff0000",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#ff0000",
+        "fill-opacity": 0.5,
+        "name": "ifi"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              68.60412597656249,
+              60.94377425903477
+            ],
+            [
+              68.6260986328125,
+              60.51675086553633
+            ],
+            [
+              68.7799072265625,
+              60.267066292456654
+            ],
+            [
+              68.9666748046875,
+              60.38943385115715
+            ],
+            [
+              69.1973876953125,
+              60.310627317400424
+            ],
+            [
+              69.5928955078125,
+              60.343260013555195
+            ],
+            [
+              70.1641845703125,
+              60.4111400885279
+            ],
+            [
+              70.29052734375,
+              60.53837217051857
+            ],
+            [
+              69.89501953125,
+              60.6920065588842
+            ],
+            [
+              69.63134765625,
+              60.600453043068256
+            ],
+            [
+              69.5928955078125,
+              60.751108560796816
+            ],
+            [
+              69.76318359375,
+              60.87166070999515
+            ],
+            [
+              68.60412597656249,
+              60.94377425903477
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Приблер"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.41436767578124,
+          60.65703151551042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stroke": "#05fffb",
         "stroke-width": 2,
         "stroke-opacity": 1,
