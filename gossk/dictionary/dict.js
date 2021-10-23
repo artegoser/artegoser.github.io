@@ -3,7 +3,7 @@ window.addEventListener("load", async ()=>{
     dict = await dict.json();
     
     $("#sub").on("click", ()=>{
-        $("#words").val("");
+        $("#words").html("");
         for(let item of dict){
             if(item.en.match(new RegExp($("#search").val(), "gi"))||item.ru.match(new RegExp($("#search").val(), "gi"))||item.sli.match(new RegExp($("#search").val(), "gi"))){
                 $("#words").append(`SLI: ${item.sli} => RU: ${item.ru} => EN: ${item.en} <br/>`);
