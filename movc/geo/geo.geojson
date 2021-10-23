@@ -215,23 +215,6 @@
       "properties": {
         "marker-color": "#ff0000",
         "marker-size": "medium",
-        "marker-symbol": "airport",
-        "type": "airport",
-        "name": "Дипломатический Аэропорт Норильскино"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          89.1375732421875,
-          69.48837239932325
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#ff0000",
-        "marker-size": "medium",
         "marker-symbol": "",
         "type": "city",
         "name": "Поднарильск"
@@ -360,23 +343,6 @@
         "coordinates": [
           -18.720703125,
           81.06595681304283
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#ff0000",
-        "marker-size": "medium",
-        "marker-symbol": "hospital",
-        "type": "hospital",
-        "name": "Государственная псих больница \"Решение проблем в башке\" №1"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          98.9208984375,
-          79.52864723963516
         ]
       }
     },
