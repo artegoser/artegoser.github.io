@@ -1,5 +1,5 @@
 window.addEventListener("load", async ()=>{
-    let dict = await fetch("/github/artegoser.github.io/gossk/dictionary/slingonian-en-ru-dict.json");
+    let dict = await fetch("/gossk/dictionary/slingonian-en-ru-dict.json");
     dict = await dict.json();
     
     $("#sub").on("click", ()=>{
