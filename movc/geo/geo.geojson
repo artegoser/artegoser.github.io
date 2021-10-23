@@ -4,6 +4,279 @@
     {
       "type": "Feature",
       "properties": {
+        "stroke": "#ff0000",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#ff0000",
+        "fill-opacity": 0.5,
+        "name": "ifi"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              87.86865234374999,
+              70.26316242357365
+            ],
+            [
+              87.42919921875,
+              70.23717539303026
+            ],
+            [
+              87.000732421875,
+              70.08056215839737
+            ],
+            [
+              86.23168945312499,
+              69.72572191418737
+            ],
+            [
+              86.099853515625,
+              69.47296854140573
+            ],
+            [
+              85.869140625,
+              69.40737858034693
+            ],
+            [
+              85.58349609375,
+              69.17818443567214
+            ],
+            [
+              86.5283203125,
+              69.00567519658819
+            ],
+            [
+              88.450927734375,
+              68.83576865659356
+            ],
+            [
+              89.31884765624999,
+              69.04107185913101
+            ],
+            [
+              89.62646484375,
+              69.2444723262008
+            ],
+            [
+              89.384765625,
+              69.28725695167886
+            ],
+            [
+              89.593505859375,
+              69.46911584774982
+            ],
+            [
+              88.39599609375,
+              69.66090519505366
+            ],
+            [
+              89.02221679687499,
+              69.95290856690549
+            ],
+            [
+              88.92333984375,
+              70.15528786010351
+            ],
+            [
+              87.86865234374999,
+              70.26316242357365
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Норильск"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.1982421875,
+          69.35514966676206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "airport",
+        "type": "airport",
+        "name": "Дипломатический Аэропорт Норильскино"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.1375732421875,
+          69.48837239932325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Поднарильск"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.978515625,
+          69.4498419990703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Великий Старгород"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.4404296875,
+          69.19184846069052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Старгород"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.5997314453125,
+          69.29502691046066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Днепроривск"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.09326171875,
+          77.45648796281547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "prison",
+        "type": "city",
+        "name": "Государственная Тюрьма \"Холодная Участь\" строгого режима."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.68701171875,
+          78.15255126151743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Востоград"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          148.480224609375,
+          75.08149740920518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Бригород"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          149.842529296875,
+          75.16330024622059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "city",
+        "name": "Пригридар, столица ГНР."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -18.720703125,
+          81.06595681304283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "hospital",
+        "type": "hospital",
+        "name": "Государственная псих больница \"Решение проблем в башке\" №1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.9208984375,
+          79.52864723963516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "marker-color": "#ff0000",
         "marker-size": "medium",
         "marker-symbol": "circle-stroked",
