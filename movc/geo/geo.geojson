@@ -4,6 +4,48 @@
     {
       "type": "Feature",
       "properties": {
+        "stroke": "#00ff1e",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#00ff2a",
+        "fill-opacity": 0.5,
+        "name": "krona-republic"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              127.66662597656251,
+              62.429803045625206
+            ],
+            [
+              127.2161865234375,
+              62.43234536620008
+            ],
+            [
+              126.88659667968751,
+              61.63903094348754
+            ],
+            [
+              128.748779296875,
+              61.380936033590665
+            ],
+            [
+              129.56726074218747,
+              62.13214029963315
+            ],
+            [
+              127.66662597656251,
+              62.429803045625206
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stroke": "#dddd00",
         "stroke-width": 2,
         "stroke-opacity": 1,
