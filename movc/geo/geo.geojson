@@ -28977,12 +28977,12 @@
     {
       "type": "Feature",
       "properties": {
-        "stroke": "#3700ff",
+        "stroke": "#09aa1c",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "fill": "#001eff",
+        "fill": "#09aa1c",
         "fill-opacity": 0.5,
-        "name": "forpac-republic"
+        "name": "slingonia"
       },
       "geometry": {
         "type": "Polygon",
@@ -29234,7 +29234,7 @@
         "marker-color": "#1e00ff",
         "marker-size": "medium",
         "marker-symbol": "",
-        "name": "Латвет",
+        "name": "Латведолий",
         "type": "city"
       },
       "geometry": {
@@ -29251,7 +29251,7 @@
         "marker-color": "#3c20c5",
         "marker-size": "medium",
         "marker-symbol": "",
-        "name": "Стронино ",
+        "name": "Страдилиум",
         "type": "capital-city"
       },
       "geometry": {
@@ -37121,7 +37121,7 @@
         "stroke": "#007027",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "fill": "#11ff00",
+        "fill": "#5aa054",
         "fill-opacity": 0.5,
         "name": "kingdom-esperanto"
       },
@@ -37265,7 +37265,7 @@
         "stroke": "#007027",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "fill": "#11ff00",
+        "fill": "#5aa054",
         "fill-opacity": 0.5,
         "name": "kingdom-esperanto"
       },
