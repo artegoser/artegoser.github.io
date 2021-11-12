@@ -4,6 +4,384 @@
     {
       "type": "Feature",
       "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#6bbcfa",
+        "fill-opacity": 0.5,
+        "name": "Bogdanland"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7.66845703125,
+              43.50075243569041
+            ],
+            [
+              7.3828125,
+              43.83452678223682
+            ],
+            [
+              7.470703125,
+              44.040218713142146
+            ],
+            [
+              6.85546875,
+              44.10336537791152
+            ],
+            [
+              5.9765625,
+              43.83452678223682
+            ],
+            [
+              5.295410156249999,
+              43.58039085560784
+            ],
+            [
+              5.11962890625,
+              42.94033923363181
+            ],
+            [
+              5.9765625,
+              42.61779143282346
+            ],
+            [
+              7.580566406250001,
+              43.18114705939968
+            ],
+            [
+              7.66845703125,
+              43.50075243569041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "FirstLand",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.204284667968749,
+          43.667871610117494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "TastyCumLand",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.847473144531249,
+          43.06487470411881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#4ea9ef",
+        "fill-opacity": 0.5,
+        "name": "Bogdanland"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.2908935546875,
+              45.381090145612646
+            ],
+            [
+              -1.4117431640625,
+              45.234283399604124
+            ],
+            [
+              -1.47216796875,
+              44.680371641890375
+            ],
+            [
+              -1.38702392578125,
+              44.38865427337759
+            ],
+            [
+              -0.95855712890625,
+              44.4808302785626
+            ],
+            [
+              -0.8294677734375,
+              44.682324539764934
+            ],
+            [
+              -0.88165283203125,
+              44.91619436708162
+            ],
+            [
+              -1.021728515625,
+              45.158800738352106
+            ],
+            [
+              -1.2908935546875,
+              45.381090145612646
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "PodDusiburgya",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1700439453125,
+          45.18010085752614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "DoNotTastyCumLand",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2249755859375,
+          44.76038647589176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#3ab1e4",
+        "fill-opacity": 0.5,
+        "name": "Bogdanland"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.67529296875,
+              49.10983779052439
+            ],
+            [
+              22.906494140624996,
+              49.1888842152458
+            ],
+            [
+              22.2802734375,
+              48.669198799260045
+            ],
+            [
+              22.796630859375,
+              48.29050321714062
+            ],
+            [
+              23.917236328125,
+              48.29050321714062
+            ],
+            [
+              25.147705078125,
+              48.647427805533546
+            ],
+            [
+              25.279541015625,
+              48.980216985374994
+            ],
+            [
+              24.67529296875,
+              49.10983779052439
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Homeland",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.7137451171875,
+          48.91708480384719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Prikarpatya",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.41162109375,
+          48.63109338958398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Visokogorya",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.26080322265625,
+          48.92430395329745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Zakarpatya",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.1427001953125,
+          48.438312142641244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#3fb6e9",
+        "fill-opacity": 0.5,
+        "name": "Bogdanland"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              68.1808090209961,
+              55.65212006016091
+            ],
+            [
+              68.818359375,
+              55.59076338488528
+            ],
+            [
+              70.4443359375,
+              56.78884524518923
+            ],
+            [
+              70.51025390625,
+              57.938183012205315
+            ],
+            [
+              68.75613078474998,
+              57.753164075463275
+            ],
+            [
+              68.7744140625,
+              57.36209004237279
+            ],
+            [
+              68.1808090209961,
+              55.65212006016091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "New Shpionsk",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.8238525390625,
+          57.51877294160811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Otsocity",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.5931396484375,
+          56.58066641402502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stroke": "#ea0606",
         "stroke-width": 2,
         "stroke-opacity": 1,
