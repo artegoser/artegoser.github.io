@@ -4,6 +4,278 @@
     {
       "type": "Feature",
       "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#29b8ff",
+        "fill-opacity": 0.5,
+        "name": "Bogdanland"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.9558105468749999,
+              36.681636065615216
+            ],
+            [
+              0.89263916015625,
+              36.41465185677695
+            ],
+            [
+              1.0251617431640625,
+              36.352739087358735
+            ],
+            [
+              1.64794921875,
+              36.421282443649496
+            ],
+            [
+              4.28466796875,
+              36.43012234551576
+            ],
+            [
+              6.943359374999999,
+              36.78289206199065
+            ],
+            [
+              7.120745927095413,
+              36.82843960330352
+            ],
+            [
+              7.119140625,
+              36.90597988519294
+            ],
+            [
+              7.1184539794921875,
+              36.95757376878687
+            ],
+            [
+              6.7950439453125,
+              37.124191327897925
+            ],
+            [
+              5.756835937499999,
+              37.07271048132943
+            ],
+            [
+              3.6474609374999996,
+              37.3002752813443
+            ],
+            [
+              1.8017578124999998,
+              37.13404537126446
+            ],
+            [
+              0.9558105468749999,
+              36.681636065615216
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Trollsk",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.97454833984375,
+          36.78289206199065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Propuskansk",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.307373046875,
+          36.50577278889992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "ShpionimZaDILand",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.4263153076171875,
+          37.073806182683725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Gomo City",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.2024688720703125,
+          36.8988418123063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "GooseZahuyarsk",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.2242431640625,
+          36.87962060502676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "ZhopoUpotreblyansk",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.77105712890625,
+          36.516258626036624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#299bff",
+        "fill-opacity": 0.5,
+        "name": "Bogdanland"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              30.157470703124996,
+              41.27780646738183
+            ],
+            [
+              30.355224609375,
+              41.03793062246529
+            ],
+            [
+              37.70536947995424,
+              40.815898317821144
+            ],
+            [
+              37.63916149735451,
+              41.095912309063
+            ],
+            [
+              37.46063232421875,
+              41.1724519493126
+            ],
+            [
+              36.97998046874999,
+              41.42625319507269
+            ],
+            [
+              35.5517578125,
+              42.00032514831621
+            ],
+            [
+              34.60693359375,
+              42.285437007491545
+            ],
+            [
+              32.969970703125,
+              42.05745022024682
+            ],
+            [
+              31.39892578125,
+              41.4509614012039
+            ],
+            [
+              30.157470703124996,
+              41.27780646738183
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "HrenoProslavyansk",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4915771484375,
+          41.947234477977766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "ChurkaStan",
+        "stroke-width": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.991455078125,
+          42.071723466810774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stroke": "#ffb8b8",
         "stroke-width": 2,
         "stroke-opacity": 1,
