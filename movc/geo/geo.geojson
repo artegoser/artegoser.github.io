@@ -11653,7 +11653,7 @@
         "stroke-opacity": 1,
         "fill": "#ffd500",
         "fill-opacity": 0.5,
-        "name": "SK"
+        "name": "SNR"
       },
       "geometry": {
         "type": "Polygon",
