@@ -21,16 +21,21 @@ window.addEventListener("load", async () => {
       ) {
         trigger = true;
         $("#words").append(
-          `SLI: ${SliToRu(item.ru, true)} => RU: ${item.ru} => EN: ${
-            item.en
-          } <br/>`
+          `<div class="row bg-success p-2 m-2 text-light" style="border-radius:20px">SLI: ${SliToRu(
+            item.ru,
+            true
+          )} => RU: ${item.ru} => EN: ${item.en}</div>`
         );
       }
     }
     if (!trigger) {
       let val = $("#search").val();
-      $("#words").append(`RU: ${val} => SLI: ${SliToRu(val, true)}<br/>
-          SLI: ${val} => RU: ${SliToRu(val)}<br/>`);
+      $("#words")
+        .append(`<div class="row bg-success p-2 m-2 text-light" style="border-radius:20px">RU: ${val} => SLI: ${SliToRu(
+        val,
+        true
+      )}<br/>
+          SLI: ${val} => RU: ${SliToRu(val)}</div>`);
     }
   }
 });
