@@ -3,14 +3,21 @@ window.addEventListener("load", async () => {
     "https://artegoser.github.io/gossk/dictionary/en-ru-dict.json"
   );
   dict = await dict.json();
-  let trigger;
 
-  $("#sub").on("click", () => {
+  $("#sub").on("click", update);
+
+  $("#search").keypress((e) => {
+    if (e.which == 13) update();
+  });
+
+  function update() {
+    let trigger;
     $("#words").html("");
     for (let item of dict) {
       if (
         item.en.match(new RegExp($("#search").val(), "gi")) ||
-        item.ru.match(new RegExp($("#search").val(), "gi"))
+        item.ru.match(new RegExp($("#search").val(), "gi")) ||
+        SliToRu(item.ru, true).match(new RegExp($("#search").val(), "gi"))
       ) {
         trigger = true;
         $("#words").append(
@@ -23,10 +30,32 @@ window.addEventListener("load", async () => {
     if (!trigger) {
       let val = $("#search").val();
       $("#words").append(`RU: ${val} => SLI: ${SliToRu(val, true)}<br/>
-      SLI: ${val} => RU: ${SliToRu(val)}<br/>`);
+          SLI: ${val} => RU: ${SliToRu(val)}<br/>`);
     }
-  });
+  }
 });
+
+function SliToRu(str, reverse) {
+  let total = "";
+  for (let char of str) {
+    if (char === " ") total += " ";
+    else {
+      let upper = isUpper(char);
+      char = char.toLowerCase();
+      for (let item of alphabet) {
+        if (item[reverse ? 0 : 1] === char) {
+          if (upper) total += item[reverse ? 1 : 0].toUpperCase();
+          else total += item[reverse ? 1 : 0];
+        }
+      }
+    }
+  }
+  return total;
+}
+
+function isUpper(char) {
+  return char.toLowerCase() !== char;
+}
 
 let alphabet = [
   ["а", "э"],
@@ -63,25 +92,3 @@ let alphabet = [
   ["ю", "а"],
   ["я", "и"],
 ];
-
-function SliToRU(str, reverse) {
-  let total = "";
-  for (let char of str) {
-    if (char === " ") total += " ";
-    else {
-      let upper = isUpper(char);
-      char = char.toLowerCase();
-      for (let item of alphabet) {
-        if (item[reverse ? 1 : 0] === char) {
-          if (upper) total += item[reverse ? 0 : 1].toUpperCase();
-          else total += item[reverse ? 0 : 1];
-        }
-      }
-    }
-  }
-  return total;
-}
-
-function isUpper(char) {
-  return char.toLowerCase() !== char;
-}
