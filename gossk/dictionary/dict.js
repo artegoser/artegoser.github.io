@@ -49,10 +49,10 @@ function SliToRu(str, reverse) {
       if (item[reverse ? 0 : 1] === char) {
         if (upper) total += item[reverse ? 1 : 0].toUpperCase();
         else total += item[reverse ? 1 : 0];
-        continue;
+        break;
       } else {
         total += char;
-        continue;
+        break;
       }
     }
   }
