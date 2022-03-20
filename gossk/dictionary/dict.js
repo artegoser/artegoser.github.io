@@ -43,15 +43,14 @@ window.addEventListener("load", async () => {
 function SliToRu(str, reverse) {
   let total = "";
   for (let char of str) {
-    if (char === " ") total += " ";
-    else {
-      let upper = isUpper(char);
-      char = char.toLowerCase();
-      for (let item of alphabet) {
-        if (item[reverse ? 0 : 1] === char) {
-          if (upper) total += item[reverse ? 1 : 0].toUpperCase();
-          else total += item[reverse ? 1 : 0];
-        }
+    let upper = isUpper(char);
+    char = char.toLowerCase();
+    for (let item of alphabet) {
+      if (item[reverse ? 0 : 1] === char) {
+        if (upper) total += item[reverse ? 1 : 0].toUpperCase();
+        else total += item[reverse ? 1 : 0];
+      } else {
+        total += char;
       }
     }
   }
