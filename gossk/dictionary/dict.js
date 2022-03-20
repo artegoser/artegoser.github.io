@@ -44,17 +44,17 @@ function SliToRu(str, reverse) {
   let total = "";
   for (let char of str) {
     let upper = isUpper(char);
+    let norm = false;
+    let initchar = char;
     char = char.toLowerCase();
     for (let item of alphabet) {
       if (item[reverse ? 0 : 1] === char) {
         if (upper) total += item[reverse ? 1 : 0].toUpperCase();
         else total += item[reverse ? 1 : 0];
-        break;
-      } else {
-        total += char;
-        break;
+        norm = true;
       }
     }
+    if(!norm) total+= initchar
   }
   return total;
 }
