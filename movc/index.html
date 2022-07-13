@@ -1,6 +1,0 @@
-<script>
-    const parse = new URLSearchParams(window.location.search);
-    let url = parse.get('url');
-    if(!url) document.location.replace("https://movc.herokuapp.com/countries");
-    else document.location.replace("https://movc.herokuapp.com"+url);
-</script>
