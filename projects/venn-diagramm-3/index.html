@@ -1,189 +1,206 @@
 <!DOCTYPE html>
-<meta charset="utf-8" />
-<style>
-  body {
-    background: #333;
-    text-align: center;
-    color: white;
-  }
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>3 sets venn diagram visualization</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background: #333;
+        text-align: center;
+        color: white;
+        margin: 0;
+      }
 
-  .m {
-    margin: 10px;
-  }
-</style>
+      .m {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.1/math.js"></script>
 
-<body>
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.1/math.js"></script>
+    <div class="m">
+      <label for="function">Function</label>
+      <input type="text" id="function" placeholder="function" />
+    </div>
 
-  <div class="m">
-    <label for="function">Function</label>
-    <input type="text" id="function" placeholder="function" />
-  </div>
+    <div>
+      <svg class="canvas"></svg>
+    </div>
 
-  <div>
-    <svg class="canvas"></svg>
-  </div>
+    <div class="m">
+      <label for="wh">width/height</label>
+      <input type="number" id="wh" placeholder="width/height" step="10" />
+      <br />
+    </div>
 
-  <div class="m">
-    <label for="wh">width/height</label>
-    <input type="number" id="wh" placeholder="width/height" step="10" /> <br />
-  </div>
+    <div class="m">
+      <label for="radius">radius</label>
+      <input type="number" id="radius" placeholder="radius" step="10" />
+    </div>
 
-  <div class="m">
-    <label for="radius">radius</label>
-    <input type="number" id="radius" placeholder="radius" step="10" />
-  </div>
-
-  <script>
-    window.onload = function () {
-      function paint(a, b, c) {
-        try {
-          return math.evaluate(document.getElementById("function").value, {
-            a,
-            b,
-            c,
-          });
-        } catch (e) {
-          return false;
+    <script>
+      window.onload = function () {
+        function paint(a, b, c) {
+          try {
+            return math.evaluate(document.getElementById("function").value, {
+              a,
+              b,
+              c,
+            });
+          } catch (e) {
+            return false;
+          }
         }
-      }
 
-      function getColor(a, b, c) {
-        return paint(a, b, c) ? "black" : "#ffffff";
-      }
+        function getColor(a, b, c) {
+          return paint(a, b, c) ? "black" : "#ffffff";
+        }
 
-      function generateVenn() {
-        d3.select(".canvas").html("");
+        function generateVenn() {
+          d3.select(".canvas").html("");
 
-        let width = Number(document.getElementById("wh").value) || 1000,
-          height = Number(document.getElementById("wh").value) || 1000,
-          radius = Number(document.getElementById("radius").value) || 180;
-        console.log(radius);
-        let svg = d3
-          .select(".canvas")
-          .attr("width", width)
-          .attr("height", height);
+          let width =
+              Number(document.getElementById("wh").value) ||
+              math.min(window.screen.width, 800),
+            height =
+              Number(document.getElementById("wh").value) ||
+              math.min(window.screen.width, 800),
+            radius = Number(document.getElementById("radius").value) || 90;
 
-        let defs = svg.append("defs");
+          let svg = d3
+            .select(".canvas")
+            .attr("width", width)
+            .attr("height", height);
 
-        //---------------circles-defs----------------
-        defs
-          .append("clipPath")
-          .attr("id", "a")
-          .append("circle")
-          .attr("cx", width / 2 - radius / 2)
-          .attr("cy", height / 2 - radius / 2)
-          .attr("r", radius);
+          let defs = svg.append("defs");
 
-        defs
-          .append("clipPath")
-          .attr("id", "b")
-          .append("circle")
-          .attr("cx", width / 2 + radius / 2)
-          .attr("cy", height / 2 - radius / 2)
-          .attr("r", radius);
+          //---------------circles-defs----------------
+          defs
+            .append("clipPath")
+            .attr("id", "a")
+            .append("circle")
+            .attr("cx", width / 2 - radius / 2)
+            .attr("cy", height / 2 - radius / 2)
+            .attr("r", radius);
 
-        defs
-          .append("clipPath")
-          .attr("id", "c")
-          .append("circle")
-          .attr("cx", width / 2)
-          .attr("cy", height / 2 + radius / 2)
-          .attr("r", radius);
+          defs
+            .append("clipPath")
+            .attr("id", "b")
+            .append("circle")
+            .attr("cx", width / 2 + radius / 2)
+            .attr("cy", height / 2 - radius / 2)
+            .attr("r", radius);
 
-        //----------------circles----------------
-        svg
-          .append("rect")
-          .attr("clip-path", "url(#a)")
-          .attr("width", width)
-          .attr("height", height)
-          .style("fill", getColor(true, false, false));
+          defs
+            .append("clipPath")
+            .attr("id", "c")
+            .append("circle")
+            .attr("cx", width / 2)
+            .attr("cy", height / 2 + radius / 2)
+            .attr("r", radius + 2);
 
-        svg
-          .append("rect")
-          .attr("clip-path", "url(#b)")
-          .attr("width", width)
-          .attr("height", height)
-          .style("fill", getColor(false, true, false));
+          //----------------circles----------------
+          svg
+            .append("rect")
+            .attr("clip-path", "url(#a)")
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", getColor(true, false, false));
 
-        svg
-          .append("rect")
-          .attr("clip-path", "url(#c)")
-          .attr("width", width)
-          .attr("height", height)
-          .style("fill", getColor(false, false, true));
+          svg
+            .append("rect")
+            .attr("clip-path", "url(#b)")
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", getColor(false, true, false));
 
-        //----------------text------------------
-        svg
-          .append("text")
-          .attr("x", width / 2 - radius / 2 - radius)
-          .attr("y", height / 2 - radius / 2 - radius)
-          .attr("text-anchor", "middle")
-          .attr("fill", "white")
-          .text("A");
+          svg
+            .append("rect")
+            .attr("clip-path", "url(#c)")
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", getColor(false, false, true));
 
-        svg
-          .append("text")
-          .attr("x", width / 2 + radius / 2 + radius)
-          .attr("y", height / 2 - radius / 2 - radius)
-          .attr("text-anchor", "middle")
-          .attr("fill", "white")
-          .text("B");
+          //----------------text------------------
+          svg
+            .append("text")
+            .attr("x", width / 2 - radius / 2 - radius)
+            .attr("y", height / 2 - radius / 2 - radius)
+            .attr("text-anchor", "middle")
+            .attr("fill", "white")
+            .text("A");
 
-        svg
-          .append("text")
-          .attr("x", width / 2 + radius)
-          .attr("y", height / 2 + radius / 2 + radius)
-          .attr("text-anchor", "middle")
-          .attr("fill", "white")
-          .text("C");
+          svg
+            .append("text")
+            .attr("x", width / 2 + radius / 2 + radius)
+            .attr("y", height / 2 - radius / 2 - radius)
+            .attr("text-anchor", "middle")
+            .attr("fill", "white")
+            .text("B");
 
-        //----------------segments-----------------
-        svg
-          .append("g")
-          .attr("clip-path", "url(#a)")
-          .append("rect")
-          .attr("clip-path", "url(#b)")
-          .attr("width", width)
-          .attr("height", height)
-          .style("fill", getColor(true, true, false));
+          svg
+            .append("text")
+            .attr("x", width / 2 + radius)
+            .attr("y", height / 2 + radius / 2 + radius)
+            .attr("text-anchor", "middle")
+            .attr("fill", "white")
+            .text("C");
 
-        svg
-          .append("g")
-          .attr("clip-path", "url(#b)")
-          .append("rect")
-          .attr("clip-path", "url(#c)")
-          .attr("width", width)
-          .attr("height", height)
-          .style("fill", getColor(false, true, true));
+          //----------------segments-----------------
+          svg
+            .append("g")
+            .attr("clip-path", "url(#a)")
+            .append("rect")
+            .attr("clip-path", "url(#b)")
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", getColor(true, true, false));
 
-        svg
-          .append("g")
-          .attr("clip-path", "url(#c)")
-          .append("rect")
-          .attr("clip-path", "url(#a)")
-          .attr("width", width)
-          .attr("height", height)
-          .style("fill", getColor(true, false, true));
+          svg
+            .append("g")
+            .attr("clip-path", "url(#b)")
+            .append("rect")
+            .attr("clip-path", "url(#c)")
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", getColor(false, true, true));
 
-        svg
-          .append("g")
-          .attr("clip-path", "url(#c)")
-          .append("g")
-          .attr("clip-path", "url(#b)")
-          .append("rect")
-          .attr("clip-path", "url(#a)")
-          .attr("width", width)
-          .attr("height", height)
-          .style("fill", getColor(true, true, true));
-      }
+          svg
+            .append("g")
+            .attr("clip-path", "url(#c)")
+            .append("rect")
+            .attr("clip-path", "url(#a)")
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", getColor(true, false, true));
 
-      generateVenn();
+          svg
+            .append("g")
+            .attr("clip-path", "url(#c)")
+            .append("g")
+            .attr("clip-path", "url(#b)")
+            .append("rect")
+            .attr("clip-path", "url(#a)")
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", getColor(true, true, true));
+        }
 
-      [...document.getElementsByTagName("input")].forEach((el) => {
-        el.addEventListener("input", generateVenn);
-      });
-    };
-  </script>
-</body>
+        generateVenn();
+
+        [...document.getElementsByTagName("input")].forEach((el) => {
+          el.addEventListener("input", generateVenn);
+        });
+      };
+    </script>
+  </body>
+</html>
