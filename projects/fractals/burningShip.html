@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="https://cdn.jsdelivr.net/npm/gpu.js@latest/dist/gpu-browser.min.js"></script>
+  <body>
+    <label for="r">R:</label>
+    <input type="number" id="r" name="r" min="0" value="1" step="0.1" />
+
+    <label for="g">G:</label>
+    <input type="number" id="g" name="g" min="0" value="2" step="0.1" />
+
+    <label for="b">B:</label>
+    <input type="number" id="b" name="b" min="0" value="1.5" step="0.1" />
+
+    <label for="brightness">Brightness:</label>
+    <input
+      type="number"
+      id="brightness"
+      name="brightness"
+      min="0"
+      value="1"
+      step="0.1"
+    />
+
+    <label for="maxIterations">Max Iterations:</label>
+    <input type="number" id="maxIterations" name="maxIterations" value="1000" />
+
+    <p></p>
+  </body>
+  <script>
+    function sumComp(z1, z2) {
+      return [z1[0] + z2[0], z1[1] + z2[1]];
+    }
+
+    function mulComp(z1, z2) {
+      return [z1[0] * z2[0] - z1[1] * z2[1], z1[0] * z2[1] + z1[1] * z2[0]];
+    }
+
+    function divComp(z1, z2) {
+      return [
+        (z1[0] * z2[0] + z1[1] * z2[1]) / (z2[0] * z2[0] + z2[1] * z2[1]),
+        (z1[1] * z2[0] - z1[0] * z2[1]) / (z2[0] * z2[0] + z2[1] * z2[1]),
+      ];
+    }
+
+    function subComp(z1, z2) {
+      return [z1[0] - z2[0], z1[1] - z2[1]];
+    }
+
+    function sinComp(z) {
+      return [Math.sin(z[0]), Math.sin(z[1])];
+    }
+
+    function cosComp(z) {
+      return [Math.cos(z[0]), Math.cos(z[1])];
+    }
+
+    function absComp(z) {
+      return [Math.abs(z[0]), Math.abs(z[1])];
+    }
+
+    function f(z, c) {
+      return sumComp(mulComp(absComp(z), absComp(z)), c);
+    }
+
+    function vectorLength(vector) {
+      return Math.sqrt(vector[0] * vector[0] + vector[1] * vector[1]);
+    }
+
+    const gpu = new GPU();
+
+    gpu
+      .addFunction(sumComp)
+      .addFunction(mulComp)
+      .addFunction(divComp)
+      .addFunction(subComp)
+      .addFunction(sinComp)
+      .addFunction(cosComp)
+      .addFunction(absComp)
+      .addFunction(f)
+      .addFunction(vectorLength);
+
+    const width = 1500;
+    const height = 1500;
+
+    const calculateMandelbrotSet = gpu
+      .createKernel(function (
+        zoomCenter,
+        zoomSize,
+        maxIterations,
+        r,
+        g,
+        b,
+        brightness
+      ) {
+        let x = [0, 0];
+        let c = [
+          zoomCenter[0] +
+            ((this.thread.x / this.output.x) * 4 - 2) * (zoomSize / 4),
+          -zoomCenter[1] -
+            ((this.thread.y / this.output.y) * 4 - 2) * (zoomSize / 4),
+        ];
+        let escaped = false;
+        let iterations = 0;
+        for (let i = 0; i < maxIterations; i++) {
+          iterations = i;
+          x = f(x, c);
+          if (vectorLength(x) > 2) {
+            escaped = true;
+            break;
+          }
+        }
+
+        const t = (iterations / maxIterations) * brightness;
+
+        escaped
+          ? this.color(t * r, t * g, t * b, 1)
+          : this.color(t * r, t * g, t * b, 1);
+      })
+      .setGraphical(true)
+      .setOutput([width, height]);
+
+    let rDoc = document.getElementById("r"),
+      gDoc = document.getElementById("g"),
+      bDoc = document.getElementById("b"),
+      brightnessDoc = document.getElementById("brightness"),
+      maxIterationsDoc = document.getElementById("maxIterations");
+
+    let r = parseFloat(rDoc.value),
+      g = parseFloat(gDoc.value),
+      b = parseFloat(bDoc.value),
+      brightness = parseFloat(brightnessDoc.value),
+      maxIterations = parseFloat(maxIterationsDoc.value);
+
+    [rDoc, gDoc, bDoc, brightnessDoc, maxIterationsDoc].forEach((doc) => {
+      doc.addEventListener("input", () => {
+        r = parseFloat(rDoc.value);
+        g = parseFloat(gDoc.value);
+        b = parseFloat(bDoc.value);
+        brightness = parseFloat(brightnessDoc.value);
+        maxIterations = parseFloat(maxIterationsDoc.value);
+
+        requestAnimationFrame(render);
+      });
+    });
+
+    let targetZoomCenter = [0, 0],
+      zoomFactor = 1,
+      zoomCenter = [0, 0],
+      zoomSize = 4,
+      stopZooming = true;
+
+    calculateMandelbrotSet(
+      zoomCenter,
+      zoomSize,
+      maxIterations,
+      r,
+      g,
+      b,
+      brightness
+    );
+    const canvas = calculateMandelbrotSet.canvas;
+    document.body.appendChild(canvas);
+
+    canvas.onmousedown = (e) => {
+      let x = e.offsetX / canvas.width,
+        y = e.offsetY / canvas.height;
+      targetZoomCenter[0] = zoomCenter[0] - zoomSize / 2.0 + x * zoomSize;
+      targetZoomCenter[1] = zoomCenter[1] + zoomSize / 2.0 - y * zoomSize;
+      stopZooming = false;
+      zoomFactor = e.buttons & 1 ? 0.99 : 1.01;
+      render();
+      return true;
+    };
+    canvas.oncontextmenu = () => {
+      return false;
+    };
+    canvas.onmouseup = () => {
+      stopZooming = true;
+    };
+
+    function render() {
+      calculateMandelbrotSet(
+        zoomCenter,
+        zoomSize,
+        maxIterations,
+        r,
+        g,
+        b,
+        brightness
+      );
+      if (!stopZooming) {
+        zoomSize *= zoomFactor;
+
+        zoomCenter[0] += 0.1 * (targetZoomCenter[0] - zoomCenter[0]);
+        zoomCenter[1] += 0.1 * (targetZoomCenter[1] - zoomCenter[1]);
+
+        window.requestAnimationFrame(render);
+      }
+    }
+    window.requestAnimationFrame(render);
+  </script>
+</html>
